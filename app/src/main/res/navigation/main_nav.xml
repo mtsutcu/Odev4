@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/anasayfa">
+
+    <fragment
+        android:id="@+id/sayfaA"
+        android:name="com.talip.odev4.SayfaA"
+        android:label="fragment_sayfa_a"
+        tools:layout="@layout/fragment_sayfa_a" >
+        <action
+            android:id="@+id/a_b_gecis"
+            app:destination="@id/sayfaB" />
+        <argument
+            android:name="text"
+            android:defaultValue="text" />
+    </fragment>
+    <fragment
+        android:id="@+id/sayfaB"
+        android:name="com.talip.odev4.SayfaB"
+        android:label="fragment_sayfa_b"
+        tools:layout="@layout/fragment_sayfa_b" >
+        <action
+            android:id="@+id/b_y_gecis"
+            app:destination="@id/sayfaY"
+            app:popUpTo="@id/sayfaA"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sayfaX"
+        android:name="com.talip.odev4.SayfaX"
+        android:label="fragment_sayfa_x"
+        tools:layout="@layout/fragment_sayfa_x" >
+        <action
+            android:id="@+id/x_y_gecis"
+            app:destination="@id/sayfaY"
+            app:popUpTo="@id/sayfaX"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sayfaY"
+        android:name="com.talip.odev4.SayfaY"
+        android:label="fragment_sayfa_y"
+        tools:layout="@layout/fragment_sayfa_y" />
+    <fragment
+        android:id="@+id/anasayfa"
+        android:name="Anasayfa"
+        tools:layout="@layout/fragment_anasayfa"
+        android:label="Anasayfa" >
+        <action
+            android:id="@+id/anasayfa_a_gecis"
+            app:destination="@id/sayfaA" />
+        <action
+            android:id="@+id/anasayfa_x_gecis"
+            app:destination="@id/sayfaX" />
+    </fragment>
+</navigation>
